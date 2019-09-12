@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 3
-  winningScore: 2
+  winningScore: 10
 --- !u!4 &1122571101
 Transform:
   m_ObjectHideFlags: 0

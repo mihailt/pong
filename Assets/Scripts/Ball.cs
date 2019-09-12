@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     public float moveSpeed = 14.0f;
     public float topBounds = 9.4f;
     public float bottomBounds = -9.4f;
-    public Vector2 ballDirection = Vector2.left;
+    public Vector2 ballDirection = Vector2.right;
     private float playerPaddleWidth, playerPaddleHeight, aiPaddleWidth, aiPaddleHeight;
     private float playerPaddleMinX, playerPaddleMinY, playerPaddleMaxX, playerPaddleMaxY;
     private float aiPaddleMinX, aiPaddleMinY, aiPaddleMaxX, aiPaddleMaxY;

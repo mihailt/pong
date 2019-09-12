@@ -25,6 +25,10 @@ public class Game : MonoBehaviour
     {
         hud = GameObject.Find("Canvas").GetComponent<Hud>();
         aiPaddle = GameObject.Find("AIPaddle");
+
+        hud.aiWin.enabled = false;
+        hud.playerWin.enabled = false;
+
         hud.info.text = "Press spacebar to play";
 
     }
@@ -60,7 +64,7 @@ public class Game : MonoBehaviour
 
     void SpawnBall() {
         ball = GameObject.Instantiate((GameObject) Resources.Load("Prefabs/Ball", typeof(GameObject)));
-        ball.transform.localPosition = new Vector3(11.8f, 0, 0);
+        ball.transform.localPosition = new Vector3(12f, 0, 0);
     }
 
     public void AiPoint() {
