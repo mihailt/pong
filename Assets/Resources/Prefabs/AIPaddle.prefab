@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a35c4ebda3f430ba9939dc17e0dd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 8
   topBounds: 8.3
   bottomBounds: -8.3
   startPosition: {x: 13, y: 0}

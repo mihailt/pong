@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    public float moveSpeed = 7.0f;
+    public float moveSpeed = 8.0f;
     public float topBounds = 8.3f;
     public float bottomBounds = -8.3f;
     private GameObject ball;
@@ -23,7 +23,7 @@ public class AI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (game.gameState != Game.GameState.Playing) { return; }
         Move();
@@ -36,12 +36,16 @@ public class AI : MonoBehaviour
         }
         if (ballComponent.ballDirection == Vector2.right) {
             ballPos = ball.transform.localPosition;
-
             if (transform.localPosition.y > bottomBounds && ballPos.y < transform.localPosition.y) {
-                transform.localPosition += new Vector3(0, -moveSpeed * Time.deltaTime, transform.localPosition.z); 
+                transform.localPosition += RoundVector3(new Vector3(0, -moveSpeed * Time.fixedDeltaTime, transform.localPosition.z)); 
             } else if (transform.localPosition.y < topBounds && ballPos.y > transform.localPosition.y) {
-                transform.localPosition += new Vector3(0, moveSpeed * Time.deltaTime, transform.localPosition.z); 
+                transform.localPosition += RoundVector3(new Vector3(0, moveSpeed * Time.fixedDeltaTime, transform.localPosition.z)); 
             }
         }
     }
+
+    private Vector3 RoundVector3( Vector3 v ) {
+        return new Vector3(v.x, (float)System.Math.Round(v.y, 2), v.z);
+    }
 }
+
